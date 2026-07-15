@@ -19,7 +19,7 @@ import type {
   Stage,
 } from "./types";
 
-const STORAGE_KEY = "boardroom-crm-v1";
+const STORAGE_KEY = "boardroom-crm-v2";
 
 interface CrmContextValue extends AppState {
   hydrated: boolean;

@@ -1,17 +1,19 @@
 import type { Brand, RecordItem, Service } from "./types";
 
+/** Four demo companies standing in for the client's brand portfolio. */
 export const BRANDS: Brand[] = [
-  { id: "A", name: "Brand A", color: "#266363" },
-  { id: "B", name: "Brand B", color: "#3d5a80" },
-  { id: "C", name: "Brand C", color: "#8b6914" },
-  { id: "D", name: "Brand D", color: "#6b4f4f" },
+  { id: "A", name: "Meridian", color: "#266363" },
+  { id: "B", name: "Harborline", color: "#3d5a80" },
+  { id: "C", name: "Crestwell", color: "#8b6914" },
+  { id: "D", name: "Northgate", color: "#6b4f4f" },
 ];
 
+/** Service catalogue used for inverted cross-sell (Has X / missing Y). */
 export const SERVICES: Service[] = [
-  { id: "X", name: "Service X" },
-  { id: "Y", name: "Service Y" },
-  { id: "Z", name: "Service Z" },
-  { id: "W", name: "Service W" },
+  { id: "X", name: "Retainer Mgmt" },
+  { id: "Y", name: "Paid Media" },
+  { id: "Z", name: "Creative Prod." },
+  { id: "W", name: "Analytics" },
 ];
 
 export const OWNERS = ["S. Ahmed", "R. Cole", "M. Ortiz", "J. Park"];
@@ -22,8 +24,13 @@ function daysAgo(n: number) {
   return d.toISOString().slice(0, 10);
 }
 
-/** Sample portfolio matching the client brief — illustrative but realistic. */
+/**
+ * Sample CRM portfolio for proposal demos.
+ * Mix of Active Clients (with CL-IDs), pipeline deals, and leads —
+ * distributed across all four brands with service gaps for cross-sell.
+ */
 export const SEED_RECORDS: RecordItem[] = [
+  // ── Meridian Active Clients ──────────────────────────────────────
   {
     id: "r1",
     company: "Acme Logistics",
@@ -37,20 +44,6 @@ export const SEED_RECORDS: RecordItem[] = [
     createdAt: daysAgo(90),
     updatedAt: daysAgo(12),
     clientSince: daysAgo(60),
-  },
-  {
-    id: "r2",
-    company: "Northline Co.",
-    contact: "Tom Briggs",
-    owner: "R. Cole",
-    brandId: "C",
-    stage: "Active Client",
-    clientId: "CL-8510",
-    services: ["X"],
-    marketingEmailsOn: false,
-    createdAt: daysAgo(70),
-    updatedAt: daysAgo(8),
-    clientSince: daysAgo(40),
   },
   {
     id: "r3",
@@ -67,6 +60,35 @@ export const SEED_RECORDS: RecordItem[] = [
     clientSince: daysAgo(30),
   },
   {
+    id: "r13",
+    company: "Iron Gate Holdings",
+    contact: "Claire Moss",
+    owner: "J. Park",
+    brandId: "A",
+    stage: "Active Client",
+    clientId: "CL-8548",
+    services: ["X", "Y", "Z"],
+    marketingEmailsOn: false,
+    createdAt: daysAgo(100),
+    updatedAt: daysAgo(15),
+    clientSince: daysAgo(70),
+  },
+  {
+    id: "r16",
+    company: "Solstice Retail",
+    contact: "James Keller",
+    owner: "S. Ahmed",
+    brandId: "A",
+    stage: "Active Client",
+    clientId: "CL-8562",
+    services: ["X"],
+    marketingEmailsOn: false,
+    createdAt: daysAgo(65),
+    updatedAt: daysAgo(9),
+    clientSince: daysAgo(38),
+  },
+  // ── Harborline Active Clients ────────────────────────────────────
+  {
     id: "r4",
     company: "Riverbend Group",
     contact: "Chris Hale",
@@ -81,6 +103,64 @@ export const SEED_RECORDS: RecordItem[] = [
     clientSince: daysAgo(25),
   },
   {
+    id: "r14",
+    company: "Velvet Line Co.",
+    contact: "Omar Said",
+    owner: "S. Ahmed",
+    brandId: "B",
+    stage: "Active Client",
+    clientId: "CL-8555",
+    services: ["Y"],
+    marketingEmailsOn: false,
+    createdAt: daysAgo(80),
+    updatedAt: daysAgo(7),
+    clientSince: daysAgo(45),
+  },
+  {
+    id: "r17",
+    company: "Cascade Films",
+    contact: "Mia Torun",
+    owner: "R. Cole",
+    brandId: "B",
+    stage: "Active Client",
+    clientId: "CL-8570",
+    services: ["X", "Y"],
+    marketingEmailsOn: false,
+    createdAt: daysAgo(52),
+    updatedAt: daysAgo(4),
+    clientSince: daysAgo(22),
+  },
+  // ── Crestwell Active Clients ─────────────────────────────────────
+  {
+    id: "r2",
+    company: "Northline Co.",
+    contact: "Tom Briggs",
+    owner: "R. Cole",
+    brandId: "C",
+    stage: "Active Client",
+    clientId: "CL-8510",
+    services: ["X"],
+    marketingEmailsOn: false,
+    createdAt: daysAgo(70),
+    updatedAt: daysAgo(8),
+    clientSince: daysAgo(40),
+  },
+  {
+    id: "r18",
+    company: "Atlas Kitchenware",
+    contact: "Priya Nair",
+    owner: "M. Ortiz",
+    brandId: "C",
+    stage: "Active Client",
+    clientId: "CL-8578",
+    services: ["X", "W"],
+    marketingEmailsOn: false,
+    createdAt: daysAgo(44),
+    updatedAt: daysAgo(6),
+    clientSince: daysAgo(19),
+  },
+  // ── Northgate Active Clients ─────────────────────────────────────
+  {
     id: "r5",
     company: "Helix Partners",
     contact: "Amy Cho",
@@ -94,6 +174,21 @@ export const SEED_RECORDS: RecordItem[] = [
     updatedAt: daysAgo(3),
     clientSince: daysAgo(20),
   },
+  {
+    id: "r19",
+    company: "Oakmont Dental",
+    contact: "Dr. Leah Bind",
+    owner: "J. Park",
+    brandId: "D",
+    stage: "Active Client",
+    clientId: "CL-8584",
+    services: ["Z", "W"],
+    marketingEmailsOn: false,
+    createdAt: daysAgo(38),
+    updatedAt: daysAgo(2),
+    clientSince: daysAgo(16),
+  },
+  // ── Active Pipeline ──────────────────────────────────────────────
   {
     id: "r6",
     company: "Cedar & Co",
@@ -137,9 +232,38 @@ export const SEED_RECORDS: RecordItem[] = [
     clientSince: null,
   },
   {
+    id: "r15",
+    company: "Quiet Oak",
+    contact: "Helen Fry",
+    owner: "R. Cole",
+    brandId: "D",
+    stage: "Active Pipeline",
+    clientId: null,
+    services: ["X"],
+    marketingEmailsOn: false,
+    createdAt: daysAgo(9),
+    updatedAt: daysAgo(0),
+    clientSince: null,
+  },
+  {
+    id: "r20",
+    company: "Brightwell Clinics",
+    contact: "Noah Price",
+    owner: "S. Ahmed",
+    brandId: "A",
+    stage: "Active Pipeline",
+    clientId: null,
+    services: [],
+    marketingEmailsOn: false,
+    createdAt: daysAgo(7),
+    updatedAt: daysAgo(0),
+    clientSince: null,
+  },
+  // ── Leads (marketing ON) ─────────────────────────────────────────
+  {
     id: "r9",
     company: "Lantern Soft",
-    contact: "Priya Nair",
+    contact: "Priya Mehta",
     owner: "J. Park",
     brandId: "D",
     stage: "Lead",
@@ -193,47 +317,33 @@ export const SEED_RECORDS: RecordItem[] = [
     clientSince: null,
   },
   {
-    id: "r13",
-    company: "Iron Gate",
-    contact: "Claire Moss",
+    id: "r21",
+    company: "Copperfinch Spa",
+    contact: "Iris Chen",
     owner: "J. Park",
-    brandId: "A",
-    stage: "Active Client",
-    clientId: "CL-8548",
-    services: ["X", "Y", "Z"],
-    marketingEmailsOn: false,
-    createdAt: daysAgo(100),
-    updatedAt: daysAgo(15),
-    clientSince: daysAgo(70),
-  },
-  {
-    id: "r14",
-    company: "Velvet Line",
-    contact: "Omar Said",
-    owner: "S. Ahmed",
-    brandId: "B",
-    stage: "Active Client",
-    clientId: "CL-8555",
-    services: ["Y"],
-    marketingEmailsOn: false,
-    createdAt: daysAgo(80),
-    updatedAt: daysAgo(7),
-    clientSince: daysAgo(45),
-  },
-  {
-    id: "r15",
-    company: "Quiet Oak",
-    contact: "Helen Fry",
-    owner: "R. Cole",
     brandId: "D",
-    stage: "Active Pipeline",
+    stage: "Lead",
     clientId: null,
-    services: ["X"],
-    marketingEmailsOn: false,
-    createdAt: daysAgo(9),
+    services: [],
+    marketingEmailsOn: true,
+    createdAt: daysAgo(1),
+    updatedAt: daysAgo(0),
+    clientSince: null,
+  },
+  {
+    id: "r22",
+    company: "Westbridge Legal",
+    contact: "Adam Lowe",
+    owner: "R. Cole",
+    brandId: "B",
+    stage: "Lead",
+    clientId: null,
+    services: [],
+    marketingEmailsOn: true,
+    createdAt: daysAgo(1),
     updatedAt: daysAgo(0),
     clientSince: null,
   },
 ];
 
-export const INITIAL_NEXT_CLIENT_SEQ = 8556;
+export const INITIAL_NEXT_CLIENT_SEQ = 8585;
