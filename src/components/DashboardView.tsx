@@ -124,7 +124,7 @@ export function DashboardView() {
         <section className="panel highlight">
           <h2>Inverted Cross-Sell</h2>
           <p className="panel-note">
-            Clients with Service X who do not have Service Y.
+            Has Retainer Mgmt · missing Paid Media
           </p>
           <div className="big-stat">{hasXMissingY}</div>
           <p className="panel-note">opportunities in current brand scope</p>
