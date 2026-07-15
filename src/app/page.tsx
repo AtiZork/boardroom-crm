@@ -33,7 +33,10 @@ export default function HomePage() {
         <div className="landing-proof">
           <div className="proof-item">
             <strong>4 brands</strong>
-            <span>Scoped records and marketing — no cross-brand messaging.</span>
+            <span>
+              Meridian · Harborline · Crestwell · Northgate — scoped marketing,
+              no crossover.
+            </span>
           </div>
           <div className="proof-item">
             <strong>Client IDs</strong>
@@ -41,7 +44,9 @@ export default function HomePage() {
           </div>
           <div className="proof-item">
             <strong>Cross-sell</strong>
-            <span>“Has X, missing Y” inverted filters on live data.</span>
+            <span>
+              Has Retainer · missing Paid Media inverted filters on live data.
+            </span>
           </div>
           <div className="proof-item">
             <strong>Dashboards</strong>

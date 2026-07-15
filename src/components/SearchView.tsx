@@ -29,7 +29,7 @@ export function SearchView() {
         <h1>Inverted Cross-Sell Search</h1>
         <p>
           Show Active Clients who have one service and do not have another — e.g.
-          Service X yes, Service Y no.
+          Retainer Mgmt yes, Paid Media no.
         </p>
       </div>
 
